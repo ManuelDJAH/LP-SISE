@@ -673,7 +673,36 @@ button {
         font-weight: 500;
         color: var(--text-muted);
     }
+/* ============ MARCAS ============ */
+.brands {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
+.brand-item {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px;
+    transition: all var(--transition);
+}
+
+    .brand-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        border-color: var(--accent);
+    }
+
+    .brand-item img {
+        max-width: 100%;
+        max-height: 60px;
+        object-fit: contain;
+    }
 /* ============ CLIENTES ============ */
 .clients {
     display: grid;
@@ -958,6 +987,10 @@ button {
     .footer__inner {
         grid-template-columns: 1fr 1fr;
     }
+
+    .brands {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1067,6 +1100,10 @@ button {
 
     .footer__bottom {
         flex-direction: column;
+    }
+
+    .brands {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

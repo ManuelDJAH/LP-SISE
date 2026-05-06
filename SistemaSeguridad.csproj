@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="wwwroot\Images\" />
+    <Folder Include="wwwroot\Images\Marcas\" />
   </ItemGroup>
 
   <ItemGroup>
