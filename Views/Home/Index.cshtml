@@ -1,8 +1,360 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@*
+    Pegar este contenido en: Views/Home/Index.cshtml
+    Reemplaza TODO lo que tenga el archivo original.
+*@
+@{
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="inicio">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__inner">
+        <span class="eyebrow reveal">Sistemas electrónicos de seguridad · Hermosillo, Sonora</span>
+        <h1 class="hero__title reveal">
+            Protegemos lo que <span class="accent">más importa</span><br />
+            con experiencia y tecnología confiable.
+        </h1>
+        <p class="hero__subtitle reveal">
+            Diseño, suministro, instalación y mantenimiento de sistemas de seguridad para empresas, industrias e instituciones. Más de 15 años protegiendo a nuestros clientes en Sonora.
+        </p>
+        <div class="hero__actions reveal">
+            <a href="#contacto" class="btn btn--primary">Solicita una cotización</a>
+            <a href="#servicios" class="btn btn--ghost">Conoce nuestros servicios</a>
+        </div>
+
+        <div class="hero__metrics reveal">
+            <div class="metric">
+                <span class="metric__value">+15</span>
+                <span class="metric__label">Años de experiencia</span>
+            </div>
+            <div class="metric">
+                <span class="metric__value">+20</span>
+                <span class="metric__label">Proyectos realizados</span>
+            </div>
+            <div class="metric">
+                <span class="metric__value">2010</span>
+                <span class="metric__label">Año de fundación</span>
+            </div>
+        </div>
+    </div>
+    <a href="#servicios" class="hero__scroll" aria-label="Bajar a servicios">
+        <span></span>
+    </a>
+</section>
+
+<!-- ===================== SERVICIOS ===================== -->
+<section class="section" id="servicios">
+    <div class="container">
+        <header class="section__head reveal">
+            <span class="eyebrow">Nuestros servicios</span>
+            <h2 class="section__title">Soluciones integrales de seguridad electrónica</h2>
+            <p class="section__lead">Brindamos soluciones a la medida con suministro, instalación y mantenimiento de sistemas de seguridad, garantizando la protección de personas, bienes e instalaciones de nuestros clientes.</p>
+        </header>
+
+        <div class="grid grid--3">
+            <article class="card reveal">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c1.5 3 4 4.5 4 8a4 4 0 11-8 0c0-2 1-3.5 2-5"/><path d="M10 14c.5 1.5 2 2.5 4 2"/></svg>
+                </div>
+                <h3 class="card__title">Sistemas contra incendio</h3>
+                <p class="card__text">Suministro, instalación y mantenimiento de detectores de humo, calor y gases, integrados a paneles certificados y sistemas de evacuación.</p>
+            </article>
+
+            <article class="card reveal">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="14" height="10" rx="1.5"/><path d="M17 9l4-2v10l-4-2z"/><circle cx="10" cy="11" r="1.2" fill="currentColor"/></svg>
+                </div>
+                <h3 class="card__title">Sistemas de CCTV</h3>
+                <p class="card__text">Cámaras IP de alta resolución, grabación inteligente y monitoreo remoto. Suministro, instalación y mantenimiento profesional.</p>
+            </article>
+
+            <article class="card reveal">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="11" r="3"/><path d="M9 17h6"/></svg>
+                </div>
+                <h3 class="card__title">Control de acceso</h3>
+                <p class="card__text">Sistemas biométricos, lectoras de tarjetas y reconocimiento facial para gestionar accesos de forma segura y confiable.</p>
+            </article>
+
+            <article class="card reveal">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+                </div>
+                <h3 class="card__title">Cableado estructurado</h3>
+                <p class="card__text">Suministro e instalación de redes de voz y datos. Infraestructura de comunicación confiable para empresas e instituciones.</p>
+            </article>
+
+            <article class="card reveal">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 3v18M13 3v18M19 3v18"/></svg>
+                </div>
+                <h3 class="card__title">Cercas electrificadas</h3>
+                <p class="card__text">Suministro, instalación y mantenimiento de sistemas perimetrales eléctricos para protección externa de propiedades.</p>
+            </article>
+
+            <article class="card reveal">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+                </div>
+                <h3 class="card__title">Suministros industriales</h3>
+                <p class="card__text">Componentes y materiales especializados para proyectos de seguridad e instalaciones técnicas industriales.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== NOSOTROS ===================== -->
+<section class="section section--alt" id="nosotros">
+    <div class="container grid grid--2 grid--align">
+        <div class="reveal">
+            <span class="eyebrow">¿Por qué elegirnos?</span>
+            <h2 class="section__title">Tecnología, experiencia y compromiso desde 2010.</h2>
+            <p class="section__lead">Combinamos ingeniería de precisión con un servicio cercano. Nos especializamos en proyectos donde la seguridad no admite errores.</p>
+
+            <ul class="features">
+                <li>
+                    <span class="feature__check">✓</span>
+                    <div>
+                        <h4>15+ años de experiencia</h4>
+                        <p>Operando desde agosto de 2010, con amplia trayectoria en proyectos críticos.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature__check">✓</span>
+                    <div>
+                        <h4>Equipos certificados</h4>
+                        <p>Trabajamos con marcas y tecnologías líderes que garantizan calidad y durabilidad.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature__check">✓</span>
+                    <div>
+                        <h4>Ingeniería a la medida</h4>
+                        <p>Diseñamos cada solución según el riesgo, espacio y presupuesto del cliente.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature__check">✓</span>
+                    <div>
+                        <h4>Servicio personalizado</h4>
+                        <p>Atención cercana y oportuna en todo el proceso, desde la cotización hasta el soporte.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="image-frame reveal">
+            <img src="https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=900&q=70" alt="Centro de monitoreo profesional" loading="lazy" />
+        </div>
+    </div>
+</section>
+
+<!-- ===================== MISIÓN / VISIÓN ===================== -->
+<section class="section" id="mision-vision">
+    <div class="container">
+        <header class="section__head reveal">
+            <span class="eyebrow">Nuestra esencia</span>
+            <h2 class="section__title">Misión y Visión</h2>
+        </header>
+
+        <div class="grid grid--2 grid--gap">
+            <article class="card reveal" style="padding:40px;">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+                </div>
+                <h3 class="card__title">Misión</h3>
+                <p class="card__text">Brindar soluciones integrales de seguridad electrónica mediante el suministro, instalación y mantenimiento de sistemas de seguridad, garantizando la protección de personas, bienes e instalaciones de nuestros clientes con tecnología confiable, personal capacitado y un servicio oportuno y personalizado.</p>
+            </article>
+
+            <article class="card reveal" style="padding:40px;">
+                <div class="card__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <h3 class="card__title">Visión</h3>
+                <p class="card__text">Ser la empresa reconocida en soluciones de seguridad electrónica en nuestra región, dedicada al suministro, instalación y mantenimiento de sistemas de seguridad que protegen lo que más importa a nuestros clientes, contribuyendo a construir entornos más seguros y confiables.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PROCESO ===================== -->
+<section class="section section--alt" id="proceso">
+    <div class="container">
+        <header class="section__head reveal">
+            <span class="eyebrow">Cómo trabajamos</span>
+            <h2 class="section__title">Un proceso claro de principio a fin</h2>
+        </header>
+
+        <div class="steps">
+            <div class="step reveal">
+                <span class="step__num">01</span>
+                <h3>Diagnóstico</h3>
+                <p>Visita técnica y análisis de riesgos en sitio sin costo.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step__num">02</span>
+                <h3>Diseño</h3>
+                <p>Propuesta técnica y comercial detallada según tus necesidades.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step__num">03</span>
+                <h3>Instalación</h3>
+                <p>Implementación con personal capacitado y supervisión continua.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step__num">04</span>
+                <h3>Soporte</h3>
+                <p>Capacitación, mantenimiento y seguimiento permanente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PROYECTOS ===================== -->
+<section class="section" id="proyectos">
+    <div class="container">
+        <header class="section__head reveal">
+            <span class="eyebrow">Casos de éxito</span>
+            <h2 class="section__title">Proyectos que respaldan nuestra experiencia</h2>
+            <p class="section__lead">Una muestra de los principales proyectos que hemos realizado en instituciones, hospitales y empresas de la región.</p>
+        </header>
+
+        <div class="gallery">
+            <figure class="gallery__item reveal">
+                <img src="https://images.unsplash.com/photo-1573164574511-73c773193279?auto=format&fit=crop&w=800&q=70" alt="Torre Metrocentro" loading="lazy" />
+                <figcaption>
+                    <span>Detección de incendio</span>
+                    <h4>Torre Metrocentro</h4>
+                </figcaption>
+            </figure>
+            <figure class="gallery__item reveal">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=70" alt="Colegio San José" loading="lazy" />
+                <figcaption>
+                    <span>Instalación y mantenimiento</span>
+                    <h4>Colegio San José</h4>
+                </figcaption>
+            </figure>
+            <figure class="gallery__item reveal">
+                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=70" alt="Hospital de la Marina, Guaymas" loading="lazy" />
+                <figcaption>
+                    <span>Detección de incendio</span>
+                    <h4>Hospital de la Marina, Guaymas</h4>
+                </figcaption>
+            </figure>
+            <figure class="gallery__item reveal">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=70" alt="Planta Pursuit Guaymas" loading="lazy" />
+                <figcaption>
+                    <span>Instalación y mantenimiento</span>
+                    <h4>Planta Pursuit, Guaymas</h4>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== SECTORES ===================== -->
+<section class="section section--alt" id="sectores">
+    <div class="container">
+        <header class="section__head reveal">
+            <span class="eyebrow">Sectores</span>
+            <h2 class="section__title">Soluciones para cada industria</h2>
+        </header>
+
+        <div class="sectors">
+            <div class="sector reveal"><span>🏥</span><h4>Salud</h4></div>
+            <div class="sector reveal"><span>🎓</span><h4>Educativo</h4></div>
+            <div class="sector reveal"><span>🏭</span><h4>Industrial</h4></div>
+            <div class="sector reveal"><span>🏢</span><h4>Corporativo</h4></div>
+            <div class="sector reveal"><span>🛒</span><h4>Comercial</h4></div>
+            <div class="sector reveal"><span>🏠</span><h4>Residencial</h4></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CLIENTES ===================== -->
+<section class="section" id="clientes">
+    <div class="container">
+        <header class="section__head reveal">
+            <span class="eyebrow">Clientes</span>
+            <h2 class="section__title">Quienes confían en nosotros</h2>
+            <p class="section__lead">Empresas e instituciones que han elegido nuestros servicios.</p>
+        </header>
+
+        <div class="clients">
+            <div class="client reveal"><span>911 Seguridad Electrónica</span></div>
+            <div class="client reveal"><span>Colegio San José</span></div>
+            <div class="client reveal"><span>Grupo Canoras</span></div>
+            <div class="client reveal"><span>Constructora Tomas</span></div>
+            <div class="client reveal"><span>Distribuidora ZR</span></div>
+            <div class="client reveal"><span>Teleperformance</span></div>
+            <div class="client reveal"><span>Cyrsa</span></div>
+            <div class="client reveal"><span>Sempra Infraestructura</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CTA INTERMEDIO ===================== -->
+<section class="cta-banner reveal">
+    <div class="container cta-banner__inner">
+        <div>
+            <h2>¿Listo para reforzar tu seguridad?</h2>
+            <p>Agenda una asesoría sin costo con uno de nuestros especialistas.</p>
+        </div>
+        <a href="#contacto" class="btn btn--primary">Agendar asesoría</a>
+    </div>
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section class="section" id="contacto">
+    <div class="container grid grid--2 grid--gap">
+        <div class="reveal">
+            <span class="eyebrow">Contacto</span>
+            <h2 class="section__title">Hablemos de tu proyecto</h2>
+            <p class="section__lead">Cuéntanos qué necesitas y un asesor se pondrá en contacto contigo en menos de 24 horas.</p>
+
+            <ul class="contact-info">
+                <li><strong>Teléfono:</strong> +52 662 142 4966</li>
+                <li><strong>Email:</strong> vayo28@hotmail.com</li>
+                <li><strong>Dirección:</strong> De Los Racimos 20, La Verbena, Hermosillo, Sonora</li>
+                <li><strong>Horario:</strong> Lun – Vie · 9:00 – 18:00</li>
+            </ul>
+        </div>
+
+        <form class="form reveal" id="contactForm" novalidate>
+            <div class="form__row">
+                <label>
+                    <span>Nombre</span>
+                    <input type="text" name="nombre" required />
+                </label>
+                <label>
+                    <span>Teléfono</span>
+                    <input type="tel" name="telefono" required />
+                </label>
+            </div>
+            <label>
+                <span>Email</span>
+                <input type="email" name="email" required />
+            </label>
+            <label>
+                <span>Servicio de interés</span>
+                <select name="servicio" required>
+                    <option value="">Selecciona una opción</option>
+                    <option>Sistemas contra incendio</option>
+                    <option>Sistemas de CCTV</option>
+                    <option>Control de acceso</option>
+                    <option>Cableado estructurado</option>
+                    <option>Cercas electrificadas</option>
+                    <option>Suministros industriales</option>
+                </select>
+            </label>
+            <label>
+                <span>Mensaje</span>
+                <textarea name="mensaje" rows="4" required></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--block">Enviar solicitud</button>
+            <p class="form__status" id="formStatus"></p>
+        </form>
+    </div>
+</section>

@@ -1,49 +1,107 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+@*
+    Pegar este contenido en: Views/Shared/_Layout.cshtml
+    Reemplaza TODO lo que tenga el archivo original.
+*@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SistemaSeguridad</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SistemaSeguridad.styles.css" asp-append-version="true" />
+    <meta name="description" content="Soporte Integral De Sistemas Electrónicos: sistemas contra incendio, CCTV, control de acceso, cercas electrificadas, cableado estructurado y suministros industriales en Hermosillo, Sonora." />
+    <title>@ViewData["Title"] - Soporte Integral SE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SistemaSeguridad</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - SistemaSeguridad - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <!-- ===================== HEADER ===================== -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#inicio" class="brand">
+                <img src="~/images/logo.png" alt="Soporte Integral SE" class="brand__mark" />
+                <span class="brand__name">Soporte Integral<small>De Sistemas Electrónicos</small></span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#inicio" class="nav__link">Inicio</a></li>
+                    <li><a href="#servicios" class="nav__link">Servicios</a></li>
+                    <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+                    <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+                    <li><a href="#contacto" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <a href="#contacto" class="btn btn--primary btn--sm header__cta">Cotizar</a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div>
+                <a href="#inicio" class="brand">
+                    <span class="brand__mark"></span>
+                    <span class="brand__name">Soporte Integral<small>De Sistemas Electrónicos</small></span>
+                </a>
+                <p class="footer__tag">Soporte Integral De Sistemas Electrónicos. Protegiendo a nuestros clientes en Hermosillo y todo Sonora desde 2010.</p>
+            </div>
+
+            <div>
+                <h5>Servicios</h5>
+                <ul>
+                    <li><a href="#servicios">Contra incendio</a></li>
+                    <li><a href="#servicios">CCTV</a></li>
+                    <li><a href="#servicios">Control de acceso</a></li>
+                    <li><a href="#servicios">Cableado estructurado</a></li>
+                    <li><a href="#servicios">Cercas electrificadas</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Empresa</h5>
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#mision-vision">Misión y Visión</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Contacto</h5>
+                <ul class="footer__contact">
+                    <li>+52 662 142 4966</li>
+                    <li>vayo28@hotmail.com</li>
+                    <li>Hermosillo, Sonora</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom container">
+            <p>© <span id="year"></span> Soporte Integral De Sistemas Electrónicos. Todos los derechos reservados.</p>
+            <div>
+                <a href="#">Aviso de privacidad</a>
+                <a href="#">Términos</a>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- ===================== WHATSAPP FLOTANTE ===================== -->
+    <a href="https://wa.me/5216621424966" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.8 5.5 2.2 7.9L.5 31.5l7.8-2.1c2.3 1.3 4.9 2 7.7 2 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28c-2.5 0-4.9-.7-7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3 0-7.3 5.9-13.3 13.3-13.3S29.3 8.7 29.3 16 23.3 28.5 16 28.5zm7.3-9.7c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.5-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.8-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5z"/></svg>
+    </a>
+
+    <script src="~/js/main.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
