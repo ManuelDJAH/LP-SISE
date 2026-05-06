@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             status.textContent = '';
             status.className = 'form__status';
 
-            // Validación cliente (rápida, antes de enviar al servidor)
-            const data = Object.fromEntries(new FormData(form));
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
             const errors = [];
+
             if (!data.nombre.trim()) errors.push('nombre');
             if (!/^[\d+\s()-]{7,}$/.test(data.telefono.trim())) errors.push('telefono');
             if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email.trim())) errors.push('email');
@@ -75,15 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Enviando...';
 
             try {
-                const res = await fetch('/Contacto/Enviar', {
-                    method: 'POST',
-                    body: new FormData(form)
-                });
-                const result = await res.json();
+                // En la versión estática solo simula. En el proyecto MVC, descomenta el fetch:
+                // const res = await fetch('/Contacto/Enviar', { method: 'POST', body: formData });
+                // const result = await res.json();
+                // status.textContent = result.mensaje;
+                // status.classList.add(result.ok ? 'success' : 'error');
+                // if (result.ok) form.reset();
 
-                status.textContent = result.mensaje;
-                status.classList.add(result.ok ? 'success' : 'error');
-                if (result.ok) form.reset();
+                // SIMULACIÓN (versión estática)
+                await new Promise(r => setTimeout(r, 600));
+                status.textContent = '✓ ¡Gracias! Te contactaremos pronto.';
+                status.classList.add('success');
+                form.reset();
             } catch (err) {
                 status.textContent = 'Error de conexión. Intenta más tarde.';
                 status.classList.add('error');
@@ -94,7 +98,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* -------- 5. Año dinámico en footer -------- */
+    /* -------- 5. Carrusel del hero -------- */
+    const slides = document.querySelectorAll('.hero__slide');
+    if (slides.length > 1) {
+        const heroImgs = Array.from(slides)
+            .map(s => s.querySelector('img'))
+            .filter(Boolean);
+
+        // Espera a que cada imagen esté cargada (o falle) antes de continuar
+        const ready = (img) =>
+            (img.complete && img.naturalWidth > 0)
+                ? Promise.resolve()
+                : new Promise(resolve => {
+                    img.addEventListener('load', resolve, { once: true });
+                    img.addEventListener('error', resolve, { once: true });
+                });
+
+        Promise.all(heroImgs.map(ready)).then(() => {
+            let current = 0;
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 8000); // 8 segundos por imagen
+        });
+    }
+
+    /* -------- 6. Año dinámico en footer -------- */
     const year = document.getElementById('year');
     if (year) year.textContent = new Date().getFullYear();
 });
