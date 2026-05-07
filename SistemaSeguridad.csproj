@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="wwwroot\Images\Marcas\" />
-    <Folder Include="wwwroot\Images\Hero\" />
   </ItemGroup>
 
   <ItemGroup>
