@@ -1036,35 +1036,96 @@ button {
         margin-bottom: 48px;
     }
 
+    /* HEADER - branding compacto */
+    .header {
+        padding: 12px 0;
+    }
+
+        .header.scrolled {
+            padding: 10px 0;
+        }
+
+    .header__inner {
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 0.9rem;
+        gap: 10px;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .brand__mark {
+        width: 34px;
+        height: 34px;
+    }
+
+    .brand__name {
+        overflow: hidden;
+    }
+
+        .brand__name small {
+            font-size: 0.58rem;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    /* Esconder el botón "Cotizar" del header en móvil */
     .header__cta {
         display: none;
     }
 
+    /* Hamburger visible */
     .nav-toggle {
         display: flex;
     }
 
+    /* Menú móvil dropdown */
     .nav {
         position: fixed;
-        top: 64px;
+        top: 60px;
         left: 0;
         right: 0;
-        background-color: var(--bg);
+        background-color: rgba(11, 15, 23, 0.97);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         border-bottom: 1px solid var(--border);
-        padding: 24px;
+        padding: 20px 24px;
         transform: translateY(-110%);
-        transition: transform var(--transition);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
     }
 
         .nav.active {
             transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
         }
 
     .nav__list {
         flex-direction: column;
-        gap: 18px;
+        gap: 0;
     }
 
+        .nav__list li {
+            border-bottom: 1px solid var(--border);
+        }
+
+            .nav__list li:last-child {
+                border-bottom: none;
+            }
+
+    .nav__link {
+        display: block;
+        padding: 14px 4px;
+        font-size: 0.95rem;
+    }
+
+    /* HERO - ajustes ya existentes */
     .hero {
         min-height: auto;
         padding: 130px 0 70px;
@@ -1143,10 +1204,28 @@ button {
 
 @media (max-width: 420px) {
     .container {
-        padding: 0 18px;
+        padding: 0 16px;
     }
 
     .hero__title {
-        font-size: 2rem;
+        font-size: 1.9rem;
+    }
+
+    /* En pantallas muy pequeñas, oculta el subtítulo del brand */
+    .brand__name small {
+        display: none;
+    }
+
+    .brand__name {
+        line-height: 1.2;
+    }
+
+    .brand {
+        font-size: 0.95rem;
+    }
+
+    .brand__mark {
+        width: 32px;
+        height: 32px;
     }
 }
