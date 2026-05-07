@@ -1,0 +1,12 @@
+**/.vs
+**/bin
+**/obj
+**/.git
+**/.gitignore
+**/.dockerignore
+**/Dockerfile
+**/*.user
+**/.vscode
+**/secrets.json
+README.md
+*.md
