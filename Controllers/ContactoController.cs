@@ -11,7 +11,7 @@ public class ContactoController : Controller
 
     public ContactoController(ILeadService service) => _service = service;
 
-    [HttpPost]
+    [HttpPost("Enviar")]
     public async Task<IActionResult> Enviar([FromForm] ContactoForm form)
     {
         if (!ModelState.IsValid)

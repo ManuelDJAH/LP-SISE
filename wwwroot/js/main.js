@@ -50,52 +50,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const status = document.getElementById('formStatus');
 
     if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            status.textContent = '';
-            status.className = 'form__status';
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = '';
+    status.className = 'form__status';
 
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            const errors = [];
+    const data = Object.fromEntries(new FormData(form));
+    const errors = [];
+    if (!data.nombre.trim()) errors.push('nombre');
+    if (!/^[\d+\s()-]{7,}$/.test(data.telefono.trim())) errors.push('telefono');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email.trim())) errors.push('email');
+    if (!data.servicio) errors.push('servicio');
+    if (!data.mensaje.trim()) errors.push('mensaje');
 
-            if (!data.nombre.trim()) errors.push('nombre');
-            if (!/^[\d+\s()-]{7,}$/.test(data.telefono.trim())) errors.push('telefono');
-            if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email.trim())) errors.push('email');
-            if (!data.servicio) errors.push('servicio');
-            if (!data.mensaje.trim()) errors.push('mensaje');
+    if (errors.length) {
+        status.textContent = 'Por favor revisa los campos marcados.';
+        status.classList.add('error');
+        return;
+    }
 
-            if (errors.length) {
-                status.textContent = 'Por favor revisa los campos marcados.';
-                status.classList.add('error');
-                return;
-            }
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
 
-            const submitBtn = form.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-
-            try {
-                // En la versión estática solo simula. En el proyecto MVC, descomenta el fetch:
-                // const res = await fetch('/Contacto/Enviar', { method: 'POST', body: formData });
-                // const result = await res.json();
-                // status.textContent = result.mensaje;
-                // status.classList.add(result.ok ? 'success' : 'error');
-                // if (result.ok) form.reset();
-
-                // SIMULACIÓN (versión estática)
-                await new Promise(r => setTimeout(r, 600));
-                status.textContent = '✓ ¡Gracias! Te contactaremos pronto.';
-                status.classList.add('success');
-                form.reset();
-            } catch (err) {
-                status.textContent = 'Error de conexión. Intenta más tarde.';
-                status.classList.add('error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar solicitud';
-            }
+    try {
+        const res = await fetch('/Contacto/Enviar', {
+            method: 'POST',
+            body: new FormData(form)
         });
+        const result = await res.json();
+        status.textContent = result.mensaje;
+        status.classList.add(result.ok ? 'success' : 'error');
+        if (result.ok) form.reset();
+    } catch (err) {
+        status.textContent = 'Error de conexión. Intenta más tarde.';
+        status.classList.add('error');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar solicitud';
+    }
+});
+        
     }
 
     /* -------- 5. Carrusel del hero -------- */
