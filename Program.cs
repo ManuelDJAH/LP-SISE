@@ -9,7 +9,7 @@ builder.Services.AddControllersWithViews();
 
 // Conexión a BD
 builder.Services.AddDbContext<AppDbContext>(opts =>
-    opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    opts.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Inyección de dependencias
 builder.Services.AddScoped<ILeadRepository, LeadRepository>();

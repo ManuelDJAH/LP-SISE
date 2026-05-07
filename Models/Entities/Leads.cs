@@ -21,5 +21,5 @@ public class Lead
     [Required, MaxLength(500)]
     public string Mensaje { get; set; } = string.Empty;
 
-    public DateTime FechaRegistro { get; set; } = DateTime.Now;
+    public DateTime FechaRegistro { get; set; } = DateTime.UtcNow;
 }
